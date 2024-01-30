@@ -14,8 +14,8 @@ function Capturar() {
     if (/^[a-z0-9\s]+$/.test(mensajeCapturado)) {
         return mensajeCapturado.trim();
     } else {
-        alert("Ingrese solo letras minúsculas y sin números en el mensaje");
-        throw new Error("Mensaje contiene letras mayúsculas o números");
+        alert("Solo minúsculas y no caracteres especiales");
+        throw new Error("Mensaje contiene letras mayúsculas o caracteres especiales");
     }
 }
 
