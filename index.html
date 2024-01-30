@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Mensajes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Encriptador de Mensajes</h1>
+    <div class="mensaje">
+        <textarea id="mensaje-normal" class="mensaje-normal" cols="60" rows="20" placeholder="Ingrese el texto aqui"></textarea>
+        <img id="imagenprincipal" class="imagenprincipal" src="/1.png" alt="">
+        <textarea id="mensaje-encriptado" style="display:none" cols="60" rows="20" placeholder="   Mensaje Salida"></textarea>
+    </div>
+    <br>
+    <div class="comandos">
+        <h6 class="aclaracion">Solo minúsculas y no caracteres especiales</h6>
+        <div class="botonera">
+            <button onclick="Encriptar()" id="encriptar" class="btn">Encriptar</button>
+            <button onclick="Desencriptar()" id="desencriptar" class="btn">Desencriptar</button>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+    <footer></footer>
+</body>
+</html>

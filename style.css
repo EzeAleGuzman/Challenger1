@@ -1,0 +1,32 @@
+
+
+
+body {
+    background-image: #cccccc;
+    
+    
+}
+
+.mensaje {
+    
+display: flex;
+}
+
+.mensaje-normal {
+    margin: auto;
+    border-radius: 5PX;
+}
+.imagenprincipal {
+    margin: auto;
+}
+.comandos {
+    display: flex;
+    flex-direction: column;
+}
+
+h6 {
+    margin-left: 10rem;
+}
+.botonera {
+    margin-left:10rem;
+}
