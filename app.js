@@ -11,10 +11,14 @@ function SacarImagen() {
 function Capturar() {
     mensaje = document.querySelector("#mensaje-normal");
     let mensajeCapturado = mensaje.value;
-    if (/^[a-z0-9\s]+$/.test(mensajeCapturado)) {
+    if (/^[a-z0-9\s]+$/.test(mensajeCapturado) && mensajeCapturado !== "") {
         return mensajeCapturado.trim();
     } else {
-        alert("Solo minúsculas y no caracteres especiales");
+        encriptado = document.querySelector("#mensaje-encriptado");
+        encriptado.style.display = "none";
+        let imagen = document.querySelector("#imagenprincipal");
+        imagen.style.display = "block";
+        alert("Ingrese un mensaje por favor");
         throw new Error("Mensaje contiene letras mayúsculas o caracteres especiales");
     }
 }
@@ -22,25 +26,37 @@ function Capturar() {
 
 //Creo la funcion para Encriptar el mensaje
 function Encriptar() {
-    Capturar();
+    var mensajeOriginal = Capturar();
 
-    if (Capturar() !== "") {
-        
+    if (mensajeOriginal !== "") {
+        var encriptado = document.querySelector("#mensaje-encriptado");
 
-        encriptado = document.querySelector("#mensaje-encriptado");
-        encriptado.textContent = Capturar()
-            .replace(/a/gi, 'ai')
-            .replace(/e/gi, 'enter')
-            .replace(/i/gi, 'imes')
-            .replace(/o/gi, 'ober')
-            .replace(/u/gi, 'ufat');
+        // Definir el mapeo de reemplazo
+        const reemplazos = {
+            'u': 'ufat',
+            'o': 'ober',
+            'i': 'imes',
+            'e': 'enter',
+            'a': 'ai'
+            
+        };
 
-        SacarImagen()
+        // Aplicar el mapeo de reemplazo
+        var mensajeEncriptado = mensajeOriginal.replace(/[uoiea]/gi, match => reemplazos[match.toLowerCase()]);
+
+        // Mostrar el mensaje encriptado en el elemento
+        encriptado.textContent = mensajeEncriptado;
+
+        // sacar una imagen
+        SacarImagen();
+
+        // Mostrar el elemento encriptado
         encriptado.style.display = "block";
     } else {
         alert("Ingrese un mensaje por favor");
     }
 }
+
 
 function Desencriptar() {
 
@@ -59,11 +75,37 @@ function Desencriptar() {
 
         SacarImagen();
 
-        encriptado.style.display = "block";
+        desencriptado.style.display = "block";
 
     } else {
         console.log("No hay mensaje encriptado para desencriptar.");
     }
 }
+
+
+
+    function copiarMensaje() {
+        // Selecciona el elemento con el mensaje desencriptado
+        var mensajeEncriptado = document.querySelector("#mensaje-encriptado");
+    
+        // Selecciona el contenido del elemento
+        var contenido = mensajeEncriptado.textContent || mensajeEncriptado.innerText;
+    
+        try {
+            // Crea un área de transferencia y copia el contenido
+            var textarea = document.createElement('textarea');
+            textarea.value = contenido;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+    
+            // Creo un alerta del mensaje copiado
+            alert('Mensaje copiado al portapapeles');
+        } catch (err) {
+            console.error('No se pudo copiar al portapapeles:', err);
+        }
+    }
+    
 
 

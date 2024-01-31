@@ -1,32 +1,116 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 
 body {
-    background-image: #cccccc;
-    
-    
+    font-family: 'Cutive Mono', monospace;
+       
+}
+header{
+    display: flex;
+    justify-content: space-around;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.titulo {
+    color: rgb(33,16,50);
+    text-shadow: 0px 0px 10px rgb(33, 16, 50);
+}
 .mensaje {
     
 display: flex;
+justify-content: center;
 }
 
 .mensaje-normal {
-    margin: auto;
-    border-radius: 5PX;
+    width:300px;
+	overflow:hidden;
+	background-color:#FFF;
+	color:#222;
+	
+	font-weight:normal;
+	font-size:18px;
+	resize:none;
+	line-height:20px;
+	padding-left:100px;
+	padding-right:50px;
+	padding-top:22px;
+	padding-bottom:17px;
+	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+	background-repeat: repeat;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
 }
+
+.mensaje-encriptado { 
+    width:280px;
+	overflow:hidden;
+	background-color:#FFF;
+	color:#222;
+	font-weight:normal;
+	font-size:18px;
+	resize:none;
+    margin-left: 25px;
+	line-height:20px;
+	padding-left:100px;
+	padding-right:50px;
+	padding-top:22px;
+	padding-bottom:17px;
+	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+	background-repeat: repeat;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	-webkit-box-shadow: 0px 2px 14px #000;
+	box-shadow: 0px 2px 14px #000;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
+}
+
 .imagenprincipal {
-    margin: auto;
+    margin:  25px;
+    width:300px;
+    border-radius: 15px;
+}
+.reactivo{
+    width: 13px;
 }
 .comandos {
     display: flex;
     flex-direction: column;
 }
 
-h6 {
-    margin-left: 10rem;
+.btn {
+    font-family: 'Cutive Mono', monospace;
+    border: 0.1em solid rgb(33,16,50);
+    box-shadow: 0px 0px 10px rgb(33,16,50),
+    0px 0px 10px rgb(33,16,50) inset;;
+    border-radius: 0.2em;
+   background-color: rgb(189,250,255);
+    color: #cccccc;
+    font-size: large;
+    color: rgb(33,16,50);
 }
+
+.btn:hover {
+    box-shadow: 0px 0px 10pxrgb(189,250,255);
+    border: 0.1em solid rgb(189,250,255);
+    background-color: rgb(33,16,50);
+    color: white;
+}
+
 .botonera {
-    margin-left:10rem;
+    display: flex;
+    margin: auto;
+}
+
+#copiar-btn {
+    margin-left: 200px;
 }
