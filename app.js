@@ -14,7 +14,7 @@ function Capturar() {
     if (/^[a-z0-9\s]+$/.test(mensajeCapturado) && mensajeCapturado !== "") {
         return mensajeCapturado.trim();
     } else {
-        encriptado = document.querySelector("#mensaje-encriptado");
+        encriptado = document.querySelector("#contenedor-secreto");
         encriptado.style.display = "none";
         let imagen = document.querySelector("#imagenprincipal");
         imagen.style.display = "block";
@@ -49,9 +49,9 @@ function Encriptar() {
 
         // sacar una imagen
         SacarImagen();
-
+        var contenedor = document.querySelector("#contenedor-secreto");
         // Mostrar el elemento encriptado
-        encriptado.style.display = "block";
+        contenedor.style.display = "block";
     } else {
         alert("Ingrese un mensaje por favor");
     }

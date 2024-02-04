@@ -5,50 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Mensajes</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="contenedor">
     <header class="Encabezado">
-       <a href="https://app.aluracursos.com" target="_black" rel="noopener noreferrer"><img src="img/logo-aluraespanhol.svg" alt="link alura"> </a>
-        </div>
-        <div><h1 class="titulo"> Encriptador de Mensajes</h1>
-        </div></header>
+        <a href="https://app.aluracursos.com" target="_blank" rel="noopener noreferrer"><img class="alura"
+                src="img/logo-aluraespanhol.svg" alt="link alura"> </a>
+            <h1 class="titulo"> Encriptador de Mensajes</h1>
+    </header>
+    
 
     <main>
         <div class="mensaje">
-
-            <textarea id="mensaje-normal" class="mensaje-normal" cols="5" rows="2"
-                placeholder="Ingrese el texto aqui"></textarea>
-
+            <div class="textarea-1">
+                <textarea id="mensaje-normal" class="mensaje-normal" cols="5" rows="2" placeholder="Ingrese el texto aqui"></textarea>
+            </div>
+            <br>
+            <div class="comandos">
+                <h6 class="aclaracion"><img class="reactivo" src="img/radioactive-148902_960_720.webp" alt="icono"> Solo minúsculas y no caracteres especiales</h6>
+                <div class="botonera">
+                    <button onclick="Encriptar()" id="encriptar" class="btn">Encriptar</button>
+                    <button onclick="Desencriptar()" id="desencriptar" class="btn">Desencriptar</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="resultado">
             <img id="imagenprincipal" class="imagenprincipal" src="img/noEncontrado.jpg" alt="Imagen-NoEncontrado">
 
-            <textarea id="mensaje-encriptado" class="mensaje-encriptado" style="display:none" cols="30" rows="20"
-                placeholder="   Mensaje Salida"></textarea>
-
-        </div>
-
-        <br>
-        <div class="comandos">
-            
-            <h6 class="aclaracion"><img class="reactivo" src="img/radioactive-148902_960_720.webp" alt="icono">  Solo minúsculas y no caracteres especiales</h6>
-
-            <div class="botonera">
-                <div>
-                <button onclick="Encriptar()" id="encriptar" class="btn">Encriptar</button>
-
-                <button onclick="Desencriptar()" id="desencriptar" class="btn">Desencriptar</button>
+            <div id="contenedor-secreto" class="contenedor-secreto" style="display:none">
+                <textarea id="mensaje-encriptado" class="mensaje-encriptado" cols="30" rows="20"
+                    placeholder="   Mensaje Salida"></textarea>
+                    <br>
+                <button id="copiar-btn" class="btn" onclick="copiarMensaje()">Copiar</button>
             </div>
-                <div> <button id="copiar-btn"  class="btn" onclick="copiarMensaje()">Copiar</button></div>
-
-            </div>
-            
-
         </div>
-
     </main>
 
-    <footer> <p>&copy; 2024 EzealeGuzman. Todos los derechos reservados.</p> </footer>
+    <footer>
+        <p>&copy; 2024 EzealeGuzman. Todos los derechos reservados.</p>
+    </footer>
+</div>
     <script src="app.js"></script>
 </body>
 
