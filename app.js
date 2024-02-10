@@ -7,21 +7,72 @@ function SacarImagen() {
     imagen.style.display = "none";
 }
 
-//Creo una funcion para capturar el mensaje ingresado
+// //Creo una funcion para capturar el mensaje ingresado
+// function Capturar() {
+//     mensaje = document.querySelector("#mensaje-normal");
+//     let mensajeCapturado = mensaje.value;
+//     if (/^[a-z0-9\s]+$/.test(mensajeCapturado) && mensajeCapturado !== "") {
+//         return mensajeCapturado.trim();
+//     } else {
+//         encriptado = document.querySelector("#contenedor-secreto");
+//         encriptado.style.display = "none";
+//         let imagen = document.querySelector("#imagenprincipal");
+//         imagen.style.display = "block";
+//         alert("Ingrese un mensaje por favor");
+//         throw new Error("Mensaje contiene letras mayúsculas o caracteres especiales");
+//     }
+// }
+
 function Capturar() {
     mensaje = document.querySelector("#mensaje-normal");
     let mensajeCapturado = mensaje.value;
+
     if (/^[a-z0-9\s]+$/.test(mensajeCapturado) && mensajeCapturado !== "") {
         return mensajeCapturado.trim();
     } else {
-        encriptado = document.querySelector("#contenedor-secreto");
-        encriptado.style.display = "none";
-        let imagen = document.querySelector("#imagenprincipal");
-        imagen.style.display = "block";
-        alert("Ingrese un mensaje por favor");
-        throw new Error("Mensaje contiene letras mayúsculas o caracteres especiales");
+        var modal = document.getElementById("myModal");
+        var body = document.getElementsByTagName("body")[0];
+
+        // Mostrar el modal de error
+        var errorContent = document.getElementById("errorContent");
+        errorContent.innerHTML = "Ingrese un mensaje por favor";
+        modal.style.display = "block";
+
+        body.style.position = "fixed";
+        body.style.height = "100%";
+        body.style.overflow = "hidden";
+
+        // Devolver un valor que indique un error
+        return false;
     }
 }
+
+// Código para cerrar el modal
+if (document.getElementById("btnModal")) {
+    var modal = document.getElementById("myModal");
+    var span = document.getElementsByClassName("close")[0];
+    var body = document.getElementsByTagName("body")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+
+        body.style.position = "inherit";
+        body.style.height = "auto";
+        body.style.overflow = "visible";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+
+            body.style.position = "inherit";
+            body.style.height = "auto";
+            body.style.overflow = "visible";
+        }
+    }
+}
+
+
 
 
 //Creo la funcion para Encriptar el mensaje
